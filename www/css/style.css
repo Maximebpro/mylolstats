@@ -1,0 +1,27 @@
+/* Empty. Add your own CSS if you like */
+
+
+/**
+ MYLOLSTATS CSS RULES
+**/
+
+body {
+    background: none repeat scroll 0 0 #000000;
+}
+
+.bar.bar-stable {
+    background-color: #1f2a3e;
+}
+
+.bar.bar-dark .title {
+    color: #f1b629;
+    font-weight: bold;
+    font-family: "Crimson Text",Palatino,"Palatino Linotype","Hoefler Text",Times,"Times New Roman",serif;
+    text-shadow: 0 1px 1px black;
+}
+
+.scroll-content {
+    background-image: url("../img/lol-bg.jpg");
+    background-position: center center;
+    background-size: auto 100%;
+}

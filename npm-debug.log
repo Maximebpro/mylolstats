@@ -1,0 +1,41 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'ant' ]
+2 info using npm@1.4.6
+3 info using node@v0.10.5
+4 warn package.json ionic-project@1.0.0 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'ant', null ]
+7 verbose cache add name=undefined spec="ant" args=["ant",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'ant',
+8 verbose parsed url   path: 'ant',
+8 verbose parsed url   href: 'ant' }
+9 silly lockFile 64bd05d8-ant ant
+10 verbose lock ant /Users/womaster/.npm/64bd05d8-ant.lock
+11 silly lockFile 64bd05d8-ant ant
+12 error Error: Attempt to unlock ant, which hasn't been locked
+12 error     at unlock (/usr/local/lib/node_modules/npm/lib/cache.js:1304:11)
+12 error     at cb (/usr/local/lib/node_modules/npm/lib/cache.js:866:5)
+12 error     at /usr/local/lib/node_modules/npm/lib/cache.js:883:20
+12 error     at /usr/local/lib/node_modules/npm/lib/cache.js:1290:7
+12 error     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:167:38
+12 error     at OpenReq.Req.done (/usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:144:5)
+12 error     at OpenReq.done (/usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:64:22)
+12 error     at Object.oncomplete (fs.js:107:15)
+13 error If you need help, you may report this *entire* log,
+13 error including the npm and node versions, at:
+13 error     <http://github.com/npm/npm/issues>
+14 error System Darwin 13.2.0
+15 error command "node" "/usr/local/bin/npm" "install" "ant"
+16 error cwd /Users/womaster/workspace/mylolstats
+17 error node -v v0.10.5
+18 error npm -v 1.4.6
+19 verbose exit [ 1, true ]
