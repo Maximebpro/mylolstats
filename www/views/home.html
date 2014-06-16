@@ -1,0 +1,22 @@
+<ion-header-bar class="bar-dark">
+    <h1 class="title">My LOL Stats</h1>
+</ion-header-bar>
+<ion-content>
+
+    <div class="card" id="login-box">
+        <form name="loginForm">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Summoner's name" ng-model="summoner.name" name="sName" required>
+            </label>
+
+            <div class="item">
+                <button class="button button-block button-energized icon ion-search"
+                        ng-click="load(summoner)"
+                        ng-disabled="loginForm.$invalid || loginForm.summoner.name">
+                    Search
+                </button>
+            </div>
+        </form>
+    </div>
+</ion-content>

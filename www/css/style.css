@@ -25,3 +25,14 @@ body {
     background-position: center center;
     background-size: auto 100%;
 }
+
+.summoner-header {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100px;
+    color: white;
+}
+
+.summoner-header h3 {
+    color: white;
+    font-family: 'Trebuchet Ms';
+}

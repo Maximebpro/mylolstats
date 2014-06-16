@@ -1,23 +1,46 @@
-// Ionic Starter App
+'use strict';
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('mylolstats', ['ionic'])
+angular
+  .module('mylolstats', ['ionic', 'ui.router'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
-})
+  .constant('apiServerUrl', 'https://euw.api.pvp.net')
+  .constant('apiServerKey', '0f981cfd-ff48-43ad-88f8-993d229dc7da')
 
-.controller('HomeCtrl', function($scope) {
+  .config(function ($stateProvider, $urlRouterProvider) {
+    // For any unmatched url, redirect to /
+    $urlRouterProvider.otherwise("/");
+    $stateProvider
+      .state('home', {
+        url: "/",
+        controller: 'HomeCtrl',
+        templateUrl: "views/home.html"
+      })
+      .state('profile', {
+        url: "/profile?id",
+        controller: 'ProfileCtrl',
+        templateUrl: "views/profile.html"
+      });
+  })
 
+  .run(function($ionicPlatform, $rootScope, $log, $state, $location) {
+
+    $rootScope.$log = $log;
+    $rootScope.$state = $state;
+
+    $rootScope.currentUrl = $location.absUrl();
+    var tmpUrlArr = $rootScope.currentUrl.split('#');
+    $rootScope.currentUrl = tmpUrlArr[0];
+    $rootScope.currentUrl = $rootScope.currentUrl.substring(0, $rootScope.currentUrl.length - 1);
+
+
+    $ionicPlatform.ready(function() {
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
+      if(window.cordova && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      }
+      if(window.StatusBar) {
+        StatusBar.styleDefault();
+      }
+    });
   })

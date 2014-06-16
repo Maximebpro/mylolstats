@@ -1,0 +1,30 @@
+<ion-header-bar class="bar-dark">
+    <a class="button icon button-energized" ng-href="/">
+        <span class="icon-left ion-chevron-left "></span>
+        <span class="icon ion-search"></span>
+    </a>
+    <h1 class="title">My LOL Stats</h1>
+</ion-header-bar>
+<ion-content>
+    <div class="summoner-header row">
+        <img ng-src="/img/profileicon/{{ summoner.profileIconId }}.png">
+        <div class="col col-75">
+            <h3 class="title">{{ summoner.name }}</h3>
+            <p>Level {{ summoner.summonerLevel }}</p>
+        </div>
+    </div>
+
+    <!--
+
+{"playerStatSummaryType":"AramUnranked5x5","wins":461,"modifyDate":1402875104000,
+"aggregatedStats":{"totalChampionKills":9744,"totalTurretsKilled":538,"totalAssists":15876}}
+
+
+    -->
+    <ion-list>
+        <ion-item ng-repeat="gametype in summoner.summary" ng-show="gametype.wins > 0">
+            <h4>{{ gametype.playerStatSummaryType }} - {{ gametype.wins }} wins</h4>
+            <p>{{ gametype.aggregatedStats.totalChampionKills }} kills - {{ gametype.aggregatedStats.totalTurretsKilled }} destroyed turrets - {{ gametype.aggregatedStats.totalAssists }} assists </p>
+        </ion-item>
+    </ion-list>
+</ion-content>

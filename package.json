@@ -1,7 +1,7 @@
 {
-  "name": "ionic-project",
-  "version": "1.0.0",
-  "description": "An Ionic project",
+  "name": "My LOL Stats",
+  "version": "0.1.0",
+  "description": "A simple app that fetch data from Riot so you can get stats for any summoner",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^0.7.1",
